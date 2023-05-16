@@ -2,3 +2,15 @@
     width: 85%;
     margin: 100px auto;
 }
+
+.btn-procced {
+    display: flex;
+    width: 95%;
+    margin-bottom: 15px;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    background-color: #FF9900;
+    border-radius: 4px;
+    font-size: 19px;
+}

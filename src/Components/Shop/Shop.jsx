@@ -1,8 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import './Shop.css';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
+
 import Product from '../Product/Product';
 import Cart from '../Cart/Cart';
-import { addToDb, getShoppingCart } from '../../utilities/fakedb';
+import { addToDb, deleteShoppingCart, getShoppingCart } from '../../utilities/fakedb';
+import { Link } from 'react-router-dom';
+
+
 const Shop = () => {
     const [products, setProducts] = useState([]);
     const [cart, setCart] = useState([])
@@ -42,11 +49,11 @@ const Shop = () => {
         // if product doesn't exist in the cart, then set quantity = 1
         // if exist update quantity by 1
         const exists = cart.find(pd => pd.id === product.id);
-        if(!exists){
+        if (!exists) {
             product.quantity = 1;
-            newCart= [...cart, product]
+            newCart = [...cart, product]
         }
-        else{
+        else {
             exists.quantity = exists.quantity + 1;
             const remaining = cart.filter(pd => pd.id !== product.id);
             newCart = [...remaining, exists];
@@ -55,7 +62,10 @@ const Shop = () => {
         setCart(newCart);
         addToDb(product.id)
     }
-
+    const handleClearCart = () => {
+        setCart([]);
+        deleteShoppingCart();
+    }
     return (
         <div className='order-container'>
             <div className='products-container'>
@@ -65,7 +75,11 @@ const Shop = () => {
             </div>
 
             <div className='cart-container'>
-                <Cart cart={cart}></Cart>
+                <Cart cart={cart} handleClearCart={handleClearCart}>
+                    <Link className='link' to="/order">
+                        <button className='btn-procced'>Review Orders <FontAwesomeIcon icon={faArrowRight} /></button>
+                    </Link>
+                </Cart>
             </div>
 
         </div>

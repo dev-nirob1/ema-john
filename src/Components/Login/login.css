@@ -1,0 +1,82 @@
+.form-container {
+    box-sizing: border-box;
+    width: 500px;
+    border: 1px solid #95A0A7;
+    border-radius: 8px;
+    padding: 40px;
+    margin: 35px auto;
+    box-shadow: -12px 12px #FFE0B3;;
+}
+
+.form-title {
+    text-align: center;
+    font-size: 35px;
+    /* line-height: 42px; */
+    letter-spacing: 0.0025em;
+    color: #2A414F;
+    margin: 0;
+}
+
+.form-control input {
+    display: block;
+    width: 100%;
+    border: 1px solid #95A0A7;
+    border-radius: 8px;
+    padding: 15px 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.form-control label {
+    font-size: 17px;
+    line-height: 20px;
+    letter-spacing: 0.0015em;
+    color: #2A414F;
+    font-size: 16px;
+    margin-left: 5px;
+}
+
+.btn {
+    margin-top: 40px;
+    margin-bottom: 10px;
+    padding: 13px;
+    background: rgba(255, 153, 0, 0.3);
+    border-radius: 5px;
+    border: none;
+    width: 100%;
+    font-size: 21px;
+    line-height: 25px;
+    letter-spacing: 0.0015em;
+}
+.btn-google {
+    margin: 40px 0;
+    padding: 13px;
+    border-radius: 5px;
+    border: 1px solid #95A0A7;
+    width: 100%;
+    font-size: 17px;
+    line-height: 20px;
+    letter-spacing: 0.005em;
+    color: #2A414F;
+}
+
+.btn:hover {
+    background: rgba(255, 153, 0, 0.6);
+}
+
+.create {
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: 0.0025em;
+    color: #2A414F;
+}
+
+.create a {
+    color: #FF9900;
+}
+.success-message{
+    color: #11cbf5;
+    font-size: 16px;
+    font-weight: 600;
+}
