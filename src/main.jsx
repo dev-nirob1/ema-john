@@ -10,11 +10,12 @@ import Shop from './Components/Shop/Shop';
 import Home from './Components/Layout/Home';
 import Orders from './Components/Orders/Orders';
 import Inventory from './Components/Inventory/Inventory';
-import Login from './Components/LogIn/Login';
+import Login from './Components/Login/Login';
 import cartProductsLoader from './cartProductsLoader/cartProductsLoader';
 import CheckOut from './Components/CheckOut/CheckOut';
 import SignUp from './Components/SignUp/SignUp';
 import AuthProvider from './Components/ContextProvider/AuthProvider';
+import PrivateRoutes from './Routes/PrivateRoutes';
 
 const router = createBrowserRouter([
   {
@@ -36,7 +37,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/checkout",
-        element: <CheckOut></CheckOut>
+        element: <PrivateRoutes><CheckOut></CheckOut></PrivateRoutes>
       },
       {
         path: "/login",

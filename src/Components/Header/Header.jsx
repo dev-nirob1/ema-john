@@ -9,11 +9,9 @@ const Header = () => {
 
     const handleSignOut = () => {
         logOut()
-            .then(() => {
-                setSuccess('LogOut SuccessFull');
-            })
+            .then((result) => {})
             .catch(() => {
-                setError('Something Went Wrong')
+                console.log('Something Went Wrong')
             })
     }
 
@@ -23,10 +21,12 @@ const Header = () => {
             <div>
                 <Link to="/">Home</Link>
                 <Link to="/order">Order</Link>
-                {/* <Link to="/order-review">Order Review</Link> */}
                 <Link to="/inventory">Inventory</Link>
                 <Link to="/login">Login</Link>
                 <Link to="/sign-up">Sign Up</Link>
+                {
+                    user && <span className='text-white'>{user.email} <button onClick={handleSignOut}>Sign Out</button></span>
+                }
             </div>
         </nav>
     );

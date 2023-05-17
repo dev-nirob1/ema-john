@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import './login.css'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../ContextProvider/AuthProvider';
 
 const Login = () => {
@@ -8,6 +8,7 @@ const Login = () => {
     const [success, setSuccess] = useState('')
 
     const { signIn } = useContext(AuthContext);
+    const navigate = useNavigate();
 
     const handleSignIn = event => {
         event.preventDefault()
@@ -26,6 +27,7 @@ const Login = () => {
                 console.log(loggedUser)
                 setSuccess('Welcome to ema-john')
                 form.reset()
+                navigate("/")
             })
             .catch(error => {
                 console.log(error)
